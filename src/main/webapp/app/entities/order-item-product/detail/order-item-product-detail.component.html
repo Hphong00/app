@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="orderItemProduct">
+      <h2 data-cy="orderItemProductDetailsHeading"><span>Order Item Product</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>Id</span></dt>
+        <dd>
+          <span>{{ orderItemProduct.id }}</span>
+        </dd>
+        <dt><span>Order Item Id</span></dt>
+        <dd>
+          <span>{{ orderItemProduct.orderItemId }}</span>
+        </dd>
+        <dt><span>Product Id</span></dt>
+        <dd>
+          <span>{{ orderItemProduct.productId }}</span>
+        </dd>
+        <dt><span>Quantity</span></dt>
+        <dd>
+          <span>{{ orderItemProduct.quantity }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/order-item-product', orderItemProduct.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

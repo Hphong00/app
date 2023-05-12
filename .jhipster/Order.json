@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20230512022839",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "jhi_order",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "userId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "shippingId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "paymentId",
+      "fieldType": "UUID"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Order",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [],
+  "searchEngine": false,
+  "service": "serviceImpl"
+}

@@ -1,0 +1,90 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-payment-heading" data-cy="PaymentCreateUpdateHeading">Create or edit a Payment</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" for="field_id">Id</label>
+          <input type="text" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_userId">User Id</label>
+          <input type="text" class="form-control" name="userId" id="field_userId" data-cy="userId" formControlName="userId" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_cardNumber">Card Number</label>
+          <input
+            type="text"
+            class="form-control"
+            name="cardNumber"
+            id="field_cardNumber"
+            data-cy="cardNumber"
+            formControlName="cardNumber"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_cardHolderName">Card Holder Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="cardHolderName"
+            id="field_cardHolderName"
+            data-cy="cardHolderName"
+            formControlName="cardHolderName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_cardExpirationMonth">Card Expiration Month</label>
+          <input
+            type="number"
+            class="form-control"
+            name="cardExpirationMonth"
+            id="field_cardExpirationMonth"
+            data-cy="cardExpirationMonth"
+            formControlName="cardExpirationMonth"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_cardExpirationYear">Card Expiration Year</label>
+          <input
+            type="number"
+            class="form-control"
+            name="cardExpirationYear"
+            id="field_cardExpirationYear"
+            data-cy="cardExpirationYear"
+            formControlName="cardExpirationYear"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_cardCVV">Card CVV</label>
+          <input type="text" class="form-control" name="cardCVV" id="field_cardCVV" data-cy="cardCVV" formControlName="cardCVV" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

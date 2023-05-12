@@ -1,0 +1,25 @@
+{
+  "applications": "*",
+  "changelogDate": "20230512022836",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "cart",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "userId",
+      "fieldType": "UUID"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Cart",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [],
+  "searchEngine": false,
+  "service": "serviceImpl"
+}
